@@ -1,5 +1,5 @@
-function BookEidt() {
-  return <div>BookEidt</div>;
+function BookEdit() {
+  return <div>BookEdit</div>;
 }
 
-export default BookEidt;
+export default BookEdit;
