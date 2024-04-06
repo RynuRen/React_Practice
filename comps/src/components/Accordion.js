@@ -10,21 +10,26 @@ function Accordion({ items }) {
     // conditional rendering
     // const content = isExpanded && <div>{item.content}</div>;
     const icon = (
-      <span>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</span>
+      <span className="text-2xl">
+        {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
+      </span>
     );
 
     return (
       <div key={item.id}>
-        <div onClick={() => setExpendedIndex(index)}>
-          {icon}
+        <div
+          className="flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer"
+          onClick={() => setExpendedIndex(index)}
+        >
           {item.label}
+          {icon}
         </div>
-        {isExpanded && <div>{item.content}</div>}
+        {isExpanded && <div className="border-b p-5">{item.content}</div>}
       </div>
     );
   });
 
-  return <div>{renderedItems}</div>;
+  return <div className="border-x border-t rounded">{renderedItems}</div>;
 }
 
 export default Accordion;
